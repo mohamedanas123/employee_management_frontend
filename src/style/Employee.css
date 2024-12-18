@@ -1,0 +1,54 @@
+.employee-details-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.employee-table th, .employee-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.employee-table th {
+    background-color: #f4f4f4;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.edit-modal {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.edit-modal label {
+    display: block;
+    margin: 10px 0;
+}
+
+.edit-modal input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.edit-modal button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
