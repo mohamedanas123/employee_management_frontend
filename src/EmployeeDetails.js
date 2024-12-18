@@ -21,7 +21,7 @@ const EmployeeDetails = () => {
     useEffect(() => {
         const fetchEmployees = async () => {
             try {
-                const response = await axios.get('https://example-xmtc.onrender.com/employees');
+                const response = await axios.get('https://employee-management-g9gi.onrender.com/employees');
                 setEmployees(response.data);
             } catch (err) {
                 setError(err.response?.data || 'Failed to fetch employee details.');
@@ -50,7 +50,7 @@ const EmployeeDetails = () => {
 
     const handleSave = async () => {
         try {
-            await axios.put(`https://example-xmtc.onrender.com/employees/${formData.employeeId}`, formData);
+            await axios.put(`https://employee-management-g9gi.onrender.com/employees/${formData.employeeId}`, formData);
             setEmployees((prev) =>
                 prev.map((emp) => (emp.employeeId === formData.employeeId ? formData : emp))
             );
@@ -62,7 +62,7 @@ const EmployeeDetails = () => {
 
     const handleDelete = async (employeeId) => {
         try {
-            await axios.delete(`https://example-xmtc.onrender.com/employees/${employeeId}`);
+            await axios.delete(`https://employee-management-g9gi.onrender.com/employees/${employeeId}`);
             setEmployees((prev) => prev.filter((emp) => emp.employeeId !== employeeId));
         } catch (err) {
             setError(err.response?.data || 'Failed to delete employee.');
