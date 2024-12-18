@@ -52,6 +52,12 @@ const Form = () => {
             return false;
         }
 
+        const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        if (!gmailRegex.test(email)) {
+            displayMessage(setError, 'Please enter a valid Gmail address.');
+            return false;
+        }
+
         if (employeeId.length > 10) {
             displayMessage(setError, 'Employee ID must be a maximum of 10 characters.');
             return false;
@@ -80,7 +86,7 @@ const Form = () => {
         }
 
         try {
-            const response = await axios.post('https://example-xmtc.onrender.com/add-employee', formData);
+            const response = await axios.post('https://employee-management-g9gi.onrender.com/add-employee', formData);
             displayMessage(setMessage, response.data);
             resetForm();
         } catch (err) {
